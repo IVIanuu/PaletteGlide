@@ -1,9 +1,9 @@
 package com.ivianuu.paletteglide;
 
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v7.graphics.Palette;
 import android.widget.ImageView;
 
 import com.bumptech.glide.request.animation.GlideAnimation;
@@ -13,32 +13,24 @@ import com.ivianuu.paletteglide.palette.BitmapPaletteWrapper;
 /**
  * @author Manuel Wrage (IVIanuu)
  */
-// TODO: 19.05.2017 add types default to primary color
-public abstract class ColoredTarget extends BitmapPaletteTarget {
 
-    private int mFallbackColor;
+public abstract class PaletteTarget extends BitmapPaletteTarget {
 
-    public ColoredTarget(@NonNull ImageView view) {
-        this(view, Color.TRANSPARENT);
-    }
-
-    public ColoredTarget(@NonNull ImageView view, int fallbackColor) {
+    public PaletteTarget(@NonNull ImageView view) {
         super(view);
-        mFallbackColor = fallbackColor;
     }
 
     @Override
     public void onLoadFailed(Exception e, Drawable errorDrawable) {
         super.onLoadFailed(e, errorDrawable);
-        onColorReady(mFallbackColor);
+        onPaletteReady(null);
     }
 
     @Override
     public void onResourceReady(BitmapPaletteWrapper resource, GlideAnimation<? super BitmapPaletteWrapper> glideAnimation) {
         super.onResourceReady(resource, glideAnimation);
-        onColorReady(ColorUtils.getColor(resource.getPalette(), mFallbackColor));
+        onPaletteReady(resource.getPalette());
     }
 
-    public abstract void onColorReady(@ColorInt int color);
-
+    public abstract void onPaletteReady(@Nullable Palette palette);
 }

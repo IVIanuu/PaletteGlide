@@ -1,7 +1,9 @@
 package com.ivianuu.paletteglide.sample;
 
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.graphics.Palette;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.RequestManager;
 import com.ivianuu.paletteglide.ColoredTarget;
 import com.ivianuu.paletteglide.PaletteGlide;
+import com.ivianuu.paletteglide.PaletteTarget;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,5 +28,6 @@ public class MainActivity extends AppCompatActivity {
                         findViewById(R.id.colored_button).setBackgroundColor(color);
                     }
                 });
+
     }
 }
