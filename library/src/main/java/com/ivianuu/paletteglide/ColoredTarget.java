@@ -8,6 +8,9 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.ivianuu.paletteglide.palette.BitmapPaletteTarget;
 import com.ivianuu.paletteglide.palette.BitmapPaletteWrapper;
 
+/**
+ * @author Manuel Wrage (IVIanuu)
+ */
 public abstract class ColoredTarget extends BitmapPaletteTarget {
 
     private int mFallbackColor;
