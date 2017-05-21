@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.Resource;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.transcode.ResourceTranscoder;
-import com.ivianuu.paletteglide.ColorUtils;
+import com.ivianuu.paletteglide.PaletteUtils;
 
 public class BitmapPaletteTranscoder implements ResourceTranscoder<Bitmap, BitmapPaletteWrapper> {
 
@@ -24,7 +24,7 @@ public class BitmapPaletteTranscoder implements ResourceTranscoder<Bitmap, Bitma
     @Override
     public Resource<BitmapPaletteWrapper> transcode(Resource<Bitmap> bitmapResource) {
         Bitmap bitmap = bitmapResource.get();
-        BitmapPaletteWrapper bitmapPaletteWrapper = new BitmapPaletteWrapper(bitmap, ColorUtils.generatePalette(bitmap));
+        BitmapPaletteWrapper bitmapPaletteWrapper = new BitmapPaletteWrapper(bitmap, PaletteUtils.generatePalette(bitmap));
         return new BitmapPaletteResource(bitmapPaletteWrapper, bitmapPool);
     }
 

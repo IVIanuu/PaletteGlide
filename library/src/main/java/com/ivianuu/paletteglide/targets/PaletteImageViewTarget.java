@@ -1,4 +1,4 @@
-package com.ivianuu.paletteglide;
+package com.ivianuu.paletteglide.targets;
 
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
@@ -14,22 +14,22 @@ import com.ivianuu.paletteglide.palette.BitmapPaletteWrapper;
  * @author Manuel Wrage (IVIanuu)
  */
 
-public abstract class PaletteTarget extends BitmapPaletteTarget {
+public abstract class PaletteImageViewTarget extends BitmapPaletteTarget {
 
-    public PaletteTarget(@NonNull ImageView view) {
+    public PaletteImageViewTarget(@NonNull ImageView view) {
         super(view);
-    }
-
-    @Override
-    public void onLoadFailed(Exception e, Drawable errorDrawable) {
-        super.onLoadFailed(e, errorDrawable);
-        onPaletteReady(null);
     }
 
     @Override
     public void onResourceReady(BitmapPaletteWrapper resource, GlideAnimation<? super BitmapPaletteWrapper> glideAnimation) {
         super.onResourceReady(resource, glideAnimation);
         onPaletteReady(resource.getPalette());
+    }
+
+    @Override
+    public void onLoadFailed(Exception e, Drawable errorDrawable) {
+        super.onLoadFailed(e, errorDrawable);
+        onPaletteReady(null);
     }
 
     public abstract void onPaletteReady(@Nullable Palette palette);
