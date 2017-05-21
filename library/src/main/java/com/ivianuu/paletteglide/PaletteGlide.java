@@ -17,7 +17,6 @@ import com.ivianuu.paletteglide.palette.BitmapPaletteWrapper;
 
 import java.io.File;
 
-// TODO: 19.05.2017 add more targets 
 public class PaletteGlide {
 
     public static PaletteGlideRequestManager with(@NonNull Context context) {
