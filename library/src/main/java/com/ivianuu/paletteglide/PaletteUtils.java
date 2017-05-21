@@ -8,13 +8,6 @@ import android.support.v7.graphics.Palette;
 import java.util.Collections;
 import java.util.Comparator;
 
-import static com.ivianuu.paletteglide.PaletteProfile.MUTED;
-import static com.ivianuu.paletteglide.PaletteProfile.MUTED_DARK;
-import static com.ivianuu.paletteglide.PaletteProfile.MUTED_LIGHT;
-import static com.ivianuu.paletteglide.PaletteProfile.VIBRANT;
-import static com.ivianuu.paletteglide.PaletteProfile.VIBRANT_DARK;
-import static com.ivianuu.paletteglide.PaletteProfile.VIBRANT_LIGHT;
-
 /**
  * Author IVIanuu.
  */
